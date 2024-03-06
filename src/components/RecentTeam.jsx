@@ -8,7 +8,7 @@ function RecentTeam() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3003/api/v1/teams")
+      .get("https://warwick-backend-34369cb85885.herokuapp.com/api/v1/teams")
       .then(res => setItems(res.data))
       .catch(e => console.log(e.message));
   }, []);

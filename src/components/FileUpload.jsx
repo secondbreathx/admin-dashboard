@@ -74,7 +74,7 @@ function FileUpload() {
           formData.append('formattedDate',formattedDate);
         
           await axios.post(
-            "http://localhost:3003/api/v1/upload/file",
+            "https://warwick-backend-34369cb85885.herokuapp.com/api/v1/upload/file",
             formData,
             {
               onUploadProgress: (progressEvent) => {

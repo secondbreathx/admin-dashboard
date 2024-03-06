@@ -5,7 +5,7 @@ import RecentKpiTable from "./RecentKpiTable";
 function KpiTeam() {
   useEffect(() => {
     axios
-      .get("http://localhost:3003/api/v1/kpi")
+      .get("https://warwick-backend-34369cb85885.herokuapp.com/api/v1/kpi")
       .then(res => setKpis(res.data))
       .catch(e => console.log(e.message));
   }, []);

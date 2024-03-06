@@ -11,7 +11,7 @@ function Dashboard() {
   const [cards, setCards] = useState([]);
 
   const fetchData = () => {
-    fetch("http://localhost:3003/api/v1/upload/counts")
+    fetch("https://warwick-backend-34369cb85885.herokuapp.com/api/v1/upload/counts")
       .then(res => res.json())
       .then(data => {
         console.log(data);

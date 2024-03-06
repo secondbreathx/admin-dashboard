@@ -12,18 +12,18 @@ function DashboardTable() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3003/api/v1/kpi")
+      .get("https://warwick-backend-34369cb85885.herokuapp.com/api/v1/kpi")
       .then(res => setKpis(res.data))
       .catch(e => console.log(e.message));
 
-    axios("http://localhost:3003/api/v1/upload/date")
+    axios("https://warwick-backend-34369cb85885.herokuapp.com/api/v1/upload/date")
       .then(res => setDates(res.data))
       .catch(e => console.log(e.message));
   }, []);
 
   const handleDropdownChange = () => {
     if (selectedDate && selectedKpi) {
-      const apiUrl = `http://localhost:3003/api/v1/upload/data?formattedDate=${selectedDate}&attribute=${selectedKpi}`;
+      const apiUrl = `https://warwick-backend-34369cb85885.herokuapp.com/api/v1/upload/data?formattedDate=${selectedDate}&attribute=${selectedKpi}`;
       axios
         .get(apiUrl)
         .then(response => setDatas(response.data))
