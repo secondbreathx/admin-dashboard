@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'remixicon/fonts/remixicon.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.js';
+
+
 import './App.css';
+
+import Register from './components/Register';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
+import FileUpload from './components/FileUpload';
+import Team from './components/Team';
+import Kpi from './components/Kpi';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+    <Route path='/upload' element={<FileUpload/>}></Route>
+      <Route path='/login' element={<Login/>}></Route>
+      <Route path='/register' element={<Register/>}></Route>
+      <Route path='/' element={<Dashboard/>}></Route>
+      <Route path='/team' element={<Team/>}></Route>
+      <Route path='/kpi' element={<Kpi/>}></Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
